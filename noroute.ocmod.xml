@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<code>noroute</code>
+	<name>Normal Home Directory</name>
+	<version>1.0</version>
+	<author>Goruda</author>
+	<link></link>
+	<file path="system/library/response.php">
+		<operation>
+			<search><![CDATA[
+					public function output() {
+			]]></search>
+			<add position="after"><![CDATA[
+    		if (!defined('HTTP_CATALOG')) $this->output = str_replace('index.php?route=common/home', '', $this->output);
+			]]></add>
+		</operation>
+	</file>  
+</modification>
